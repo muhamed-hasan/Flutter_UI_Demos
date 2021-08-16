@@ -35,7 +35,8 @@ class _Profile2State extends State<Profile2> {
                 ),
                 elevation: 0,
                 backgroundColor: Colors.transparent,
-                title: Text('Title'),
+                title: Text('PROFILE2'),
+                centerTitle: true,
               ),
               body: Stack(
                 children: [

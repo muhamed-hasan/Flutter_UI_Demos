@@ -1,4 +1,4 @@
-import 'package:marthon1/profiles/profile2/profile.dart';
+import 'package:marthon1/profiles/profile3/profile.dart';
 
 class ProfileProvider {
   static Profile getProfile() {
@@ -11,6 +11,7 @@ class ProfileProvider {
       friends: 144,
       followers: 2388,
       following: 584,
+      photos: 25,
     );
   }
 }
