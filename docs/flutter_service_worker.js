@@ -28,7 +28,7 @@ const RESOURCES = {
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "index.html": "597d2b202de9cfca641f092f0d135715",
-"/": "597d2b202de9cfca641f092f0d135715",
+"/Flutter_UI_Demos/": "597d2b202de9cfca641f092f0d135715",
 "main.dart.js": "e8f93775a9f21a83a25e5b517d0a2054",
 "manifest.json": "e425dc3bb2e2bdf095c1d0b9cf2edf06",
 "version.json": "405e4d66c93c3ef6b9bd18200a8c9656"
@@ -37,7 +37,7 @@ const RESOURCES = {
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = [
-  "/",
+  "/Flutter_UI_Demos/",
 "main.dart.js",
 "index.html",
 "assets/NOTICES",
@@ -82,7 +82,7 @@ self.addEventListener("activate", function(event) {
       for (var request of await contentCache.keys()) {
         var key = request.url.substring(origin.length + 1);
         if (key == "") {
-          key = "/";
+          key = "/Flutter_UI_Demos/";
         }
         // If a resource from the old manifest is not in the new cache, or if
         // the MD5 sum has changed, delete it. Otherwise the resource is left
@@ -124,7 +124,7 @@ self.addEventListener("fetch", (event) => {
     key = key.split('?v=')[0];
   }
   if (event.request.url == origin || event.request.url.startsWith(origin + '/#') || key == '') {
-    key = '/';
+    key = '/Flutter_UI_Demos/';
   }
   // If the URL is not the RESOURCE list then return to signal that the
   // browser should take over.
@@ -132,7 +132,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   // If the URL is the index.html, perform an online-first request.
-  if (key == '/') {
+  if (key == '/Flutter_UI_Demos/') {
     return onlineFirst(event);
   }
   event.respondWith(caches.open(CACHE_NAME)
@@ -171,7 +171,7 @@ async function downloadOffline() {
   for (var request of await contentCache.keys()) {
     var key = request.url.substring(origin.length + 1);
     if (key == "") {
-      key = "/";
+      key = "/Flutter_UI_Demos/";
     }
     currentContent[key] = true;
   }
